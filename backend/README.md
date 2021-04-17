@@ -1,15 +1,23 @@
-## Routes
+## Carbon footprint backend
+
+Application to calculate the personal annual emission of CO<sub>2</sub>.
+
+### Run
+
+`yarn dev`
+
+### Routes
 
 The API is exposed by default at `http://localhost:3001/carbon-footprint/api`.
 
-### GET /travel-means
+#### GET /travel-means
 
 ```
 List the means of transport means available for calculation.
 Returns an array of string.
 ```
 
-### POST /travel-means/calculate-emission
+#### POST /travel-means/calculate-emission
 
 ```
 Calculate the annual emission from the given transport means.
@@ -20,14 +28,14 @@ Example: {"Vehicle":"4","Bus":"6"}
 Return the annual emission of CO<sub>2</sub> in kg.
 ```
 
-### GET /foods
+#### GET /foods
 
 ```
 List the foods available for calculation.
 Returns an array of string.
 ```
 
-### POST /foods/calculate-emission
+#### POST /foods/calculate-emission
 
 ```
 Calculate the annual emission from the given transport/travel means.

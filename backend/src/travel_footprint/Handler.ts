@@ -1,14 +1,16 @@
 import express, { Request, Response } from 'express'
 import { buildResponse } from '../utils/API'
-import { listMeans, sumEmissionsPerYear } from './Service'
+import { TravelFootprintService } from './Service'
 import { ITravelRequest } from './Types'
 
 const router = express.Router()
 
+const Service = TravelFootprintService()
+
 router.post('/calculate-emission', (req: Request, res: Response) => {
   try {
     const body: ITravelRequest = req.body
-    const emission = sumEmissionsPerYear(body)
+    const emission = Service.sumEmissionsPerYear(body)
     buildResponse({ statusCode: 200, success: true, data: emission, res })
   } catch (err) {
     buildResponse({ statusCode: 500, data: err, res })
@@ -17,7 +19,7 @@ router.post('/calculate-emission', (req: Request, res: Response) => {
 
 router.get('/', (_, res: Response) => {
   try {
-    const means = listMeans()
+    const means = Service.listMeans()
     buildResponse({ statusCode: 200, success: true, data: means, res })
   } catch (err) {
     buildResponse({ statusCode: 500, data: err, res })

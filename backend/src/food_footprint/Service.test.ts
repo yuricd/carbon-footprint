@@ -1,8 +1,14 @@
 import { FoodEF } from './Constants'
-import { calculateEmissionPerYear, sumEmissionsPerYear } from './Service'
+import { FoodFootprintService } from './Service'
 import { IFoodRequest, Foods } from './Types'
 
 describe('Food', () => {
+  const {
+    calculateEmissionPerYear,
+    sumEmissionsPerYear,
+    listFoods,
+  } = FoodFootprintService()
+
   describe('calculateEmissionPerYear', () => {
     it('should calculate carbon footprint for 150g of chocolate', () => {
       const WEIGHT = 150
@@ -51,8 +57,9 @@ describe('Food', () => {
 
   describe('listFoods', () => {
     it('should list all foods', () => {
-      const listFoods = Object.keys(Foods)
-      expect(listFoods.length).toBeGreaterThan(0)
+      // important to be 9 because frontend bind images to each food
+      const foods = listFoods()
+      expect(foods.length).toBe(9)
     })
   })
 })

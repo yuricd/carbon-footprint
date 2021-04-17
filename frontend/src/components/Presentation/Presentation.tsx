@@ -1,6 +1,6 @@
 import styles from './Presentation.module.scss'
 
-export const Presentation: React.FC = () => {
+export function Presentation() {
   return (
     <div className={styles.presentation}>
       <h1>Calculate your carbon footprint</h1>

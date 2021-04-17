@@ -1,8 +1,14 @@
 import { TravelEF } from './Constants'
-import { calculateEmissionPerYear, sumEmissionsPerYear } from './Service'
+import { TravelFootprintService } from './Service'
 import { ITravelRequest, TravelMeans } from './Types'
 
 describe('Travel', () => {
+  const {
+    calculateEmissionPerYear,
+    sumEmissionsPerYear,
+    listMeans,
+  } = TravelFootprintService()
+
   describe('calculateEmissionPerYear', () => {
     it('should calculate carbon footprint for integer distance', () => {
       const TWO_WAY_DISTANCE = 16
@@ -69,8 +75,9 @@ describe('Travel', () => {
 
   describe('listMeans', () => {
     it('should list all travel means', () => {
-      const listMeans = Object.keys(TravelMeans)
-      expect(listMeans.length).toBeGreaterThan(0)
+      // important to be 4 because frontend bind images to each food
+      const means = listMeans()
+      expect(means.length).toBe(4)
     })
   })
 })

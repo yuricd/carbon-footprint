@@ -45,7 +45,7 @@ export const Food: React.FC = () => {
 
         <div className={styles.content}>
           <Form form={form} onFinish={handleSubmit}>
-            <CardList>
+            <CardList data-testid="card-list">
               {isLoadingFoods ? (
                 <RenderSkeleton />
               ) : (
@@ -59,6 +59,7 @@ export const Food: React.FC = () => {
                     />
                   ))}
                   <Card
+                    data-testid="calculate"
                     onClick={handleSubmit}
                     text={result ? 'Recalculate' : 'Calculate'}
                     onlyText={true}

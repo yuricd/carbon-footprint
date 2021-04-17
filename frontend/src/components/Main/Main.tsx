@@ -1,12 +1,12 @@
 import { Tabs } from 'antd'
-import styles from './App.module.scss'
-import { Food } from './components/Food/Food'
-import { Presentation } from './components/Presentation/Presentation'
-import { Transport } from './components/Transport/Transport'
+import { Food } from '../Food/Food'
+import { Presentation } from '../Presentation/Presentation'
+import { Transport } from '../Transport/Transport'
+import styles from './Main.module.scss'
 
 const { TabPane } = Tabs
 
-function App() {
+export const Main = () => {
   return (
     <div className={styles.app}>
       <aside className={styles.presentation}>
@@ -27,5 +27,3 @@ function App() {
     </div>
   )
 }
-
-export default App

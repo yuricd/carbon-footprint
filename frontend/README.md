@@ -1,3 +1,3 @@
-## Considerations
+## Carbon Footprint
 
-If the file gets too long, I usually split the code in two files, one for the smart and another one for the dumb component.
+Application to calculate the personal annual emission of CO<sub>2</sub>.

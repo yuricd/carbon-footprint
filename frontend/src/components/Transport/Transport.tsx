@@ -14,6 +14,7 @@ import Flying from '../../assets/flying.svg'
 import styles from './Transport.module.scss'
 import { Result } from '../Result/Result'
 import { RenderSkeleton } from '../Skeleton/Skeleton'
+import { client } from '../../client'
 
 export const Transport: React.FC = () => {
   const [means, setMeans] = useState<string[]>([])
@@ -75,7 +76,7 @@ export const Transport: React.FC = () => {
   async function fetchMeans() {
     setIsLoadingMeans(true)
     try {
-      const { data } = await axios.get(`${API_URL}travel-means`)
+      const { data } = await client.get('travel-means')
       if (data.data && data.success) {
         const meanList = data.data.split(',')
         setMeans(meanList)
@@ -92,8 +93,8 @@ export const Transport: React.FC = () => {
     setIsCalculating(true)
     try {
       const values = form.getFieldsValue()
-      const { data } = await axios.post(
-        `${API_URL}travel-means/calculate-emission`,
+      const { data } = await client.post(
+        'travel-means/calculate-emission',
         values
       )
 

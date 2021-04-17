@@ -5,6 +5,7 @@ $dark-grey: #2c2c2e;
 .app {
   display: grid;
   grid-template-columns: 458px auto;
+  animation: fadeIn 1.5s linear;
 
   aside {
     position: relative;

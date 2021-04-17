@@ -19,6 +19,7 @@ import Nuts from '../../assets/nuts.svg'
 import styles from './Food.module.scss'
 import { Result } from '../Result/Result'
 import { RenderSkeleton } from '../Skeleton/Skeleton'
+import { client } from '../../client'
 
 export const Food: React.FC = () => {
   const [foods, setFoods] = useState<string[]>([])
@@ -80,7 +81,7 @@ export const Food: React.FC = () => {
   async function fetchFoods() {
     setIsLoadingFoods(true)
     try {
-      const { data } = await axios.get(`${API_URL}foods`)
+      const { data } = await client.get(`foods`)
       if (data.data && data.success) {
         const foodList = data.data.split(',')
         setFoods(foodList)
@@ -97,10 +98,7 @@ export const Food: React.FC = () => {
     setIsCalculating(true)
     try {
       const values = form.getFieldsValue()
-      const { data } = await axios.post(
-        `${API_URL}foods/calculate-emission`,
-        values
-      )
+      const { data } = await client.post(`foods/calculate-emission`, values)
 
       const totalEmission = data.data
 

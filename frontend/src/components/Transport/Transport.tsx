@@ -1,7 +1,5 @@
 import { Form, message } from 'antd'
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { API_URL } from '../../config'
 import { Card } from '../Card/Card'
 import { CardList } from '../CardList/CardList'
 import { ErrorHandler } from '../ErrorHandler/ErrorHandler'

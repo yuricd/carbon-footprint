@@ -1,7 +1,6 @@
 export enum TravelMeans {
   VEHICLE = 'Vehicle',
   BUS = 'Bus',
-  FLYING = 'Flying',
   RAIL = 'Rail',
   MOTORCYCLE = 'Motorcycle',
 }

@@ -5,7 +5,7 @@ import { ITravelRequest } from './Types'
 
 const router = express.Router()
 
-router.post('/calculateEmission', (req: Request, res: Response) => {
+router.post('/calculate-emission', (req: Request, res: Response) => {
   try {
     const body: ITravelRequest = req.body
     const emission = sumEmissionsPerYear(body)

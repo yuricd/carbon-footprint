@@ -1,0 +1,8 @@
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    margin: 0 24px 24px 0;
+  }
+}

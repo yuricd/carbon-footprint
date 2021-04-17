@@ -22,7 +22,7 @@ describe('FoodHandler', () => {
         Chocolate: 10000,
       }
       request(app)
-        .post(`${API_URI}foods/calculateEmission`)
+        .post(`${API_URI}foods/calculate-emission`)
         .send(payload)
         .expect(200)
         .end((err) => {

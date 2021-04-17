@@ -22,7 +22,7 @@ describe('TravelHandler', () => {
         Rail: 5266,
       }
       request(app)
-        .post(`${API_URI}travel-means/calculateEmission`)
+        .post(`${API_URI}travel-means/calculate-emission`)
         .send(payload)
         .expect(200)
         .end((err) => {

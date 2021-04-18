@@ -29,7 +29,6 @@
   },
   "scripts": {
     "dev": "yarn ts-node-dev src/index.ts",
-    "tsc": "yarn tsc",
     "format": "yarn prettier",
     "test": "yarn jest"
   }

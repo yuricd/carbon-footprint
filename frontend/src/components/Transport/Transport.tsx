@@ -66,7 +66,9 @@ export const Transport: React.FC = () => {
 
         {isCalculating && <p>Calculating your emission...</p>}
 
-        {!isCalculating && result && <Result result={result} />}
+        {!isCalculating && result && (
+          <Result category="transport" result={result} />
+        )}
       </ErrorHandler>
     </div>
   )

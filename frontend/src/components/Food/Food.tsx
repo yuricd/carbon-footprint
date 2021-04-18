@@ -71,7 +71,7 @@ export const Food: React.FC = () => {
 
         {isCalculating && <p>Calculating your emission...</p>}
 
-        {!isCalculating && result && <Result result={result} />}
+        {!isCalculating && result && <Result category="food" result={result} />}
       </ErrorHandler>
     </div>
   )
